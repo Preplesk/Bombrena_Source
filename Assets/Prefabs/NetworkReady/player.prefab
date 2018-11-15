@@ -2168,7 +2168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0be123c68388d4aa08e698d041b76a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerSettings: {fileID: 114644787981921586}
   playerSprite: {fileID: 212157101377676318}
   tolerance: 2
   alive: 1
@@ -2183,7 +2182,7 @@ MonoBehaviour:
   explosionTimer: 3
   explosionDuration: 1
   Id: 0
-  speed: 1100
+  speed: 1300
   bombLimit: 2
   bombPower: 2
   canKick: 0

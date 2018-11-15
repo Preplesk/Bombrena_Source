@@ -82,7 +82,7 @@ public class GManager : NetworkBehaviour {
         }
     }
 
-    public override void OnStartServer()
+    private void Start()
     {
         LookingForOthers.SetActive(true);
         WaitForOthers.SetActive(true);

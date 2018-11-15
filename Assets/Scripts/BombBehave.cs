@@ -34,7 +34,7 @@ public class BombBehave : NetworkBehaviour
             if (detonate && !explosion)
             {
                 RpcUpdateClientBomb();
-                AudioManager.Instance.Play("explosion");
+                AudioManager.Instance.RpcPlay("explosion");
                 SpawnExplosions();
                 
             }

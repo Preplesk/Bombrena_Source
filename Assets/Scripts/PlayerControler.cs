@@ -237,7 +237,7 @@ public class PlayerControler : NetworkBehaviour {
             var _bomb = Instantiate(bomb, _plant, Quaternion.identity);
             GManager.Instance.AddField(_bomb, _player);
             NetworkServer.Spawn(_bomb);
-            AudioManager.Instance.Play("cackle");
+            AudioManager.Instance.RpcPlay("cackle");
             _player.GetComponent<PlayerControler>().bombLimit -= 1;           
         }          
     }
