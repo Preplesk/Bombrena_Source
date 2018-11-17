@@ -5,6 +5,8 @@ using UnityEngine.Networking;
 
 public class BoxManagement : NetworkBehaviour {
 
+    public static BoxManagement Instance { get; private set; }
+
     public int width;
     public int height;
     public bool maxPlayers = false;
@@ -17,6 +19,19 @@ public class BoxManagement : NetworkBehaviour {
     List<Transform> spawns = new List<Transform>();
 
     // 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public override void OnStartServer()
     {
         
@@ -35,7 +50,7 @@ public class BoxManagement : NetworkBehaviour {
         SpawnBoxes();        
     }
     
-    private bool SpawnRandom()
+    private bool SpawnRate()
     {
         int n = Random.Range(0, spawnRange);
         if (n == 0)
@@ -64,7 +79,7 @@ public class BoxManagement : NetworkBehaviour {
             {
                 Vector2 tempPosition = new Vector2(x * 6, y * 6);
                
-                if (SpawnRandom() && !CheckSpawn(tempPosition))
+                if (SpawnRate() && !CheckSpawn(tempPosition))
                 {
                     SpawnBox(tempPosition);
                 }

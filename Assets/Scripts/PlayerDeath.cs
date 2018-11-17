@@ -48,12 +48,14 @@ public class PlayerDeath : NetworkBehaviour {
         if (player.playerLives == 1)
         {
             GManager.Instance.ChangeGameStatus( GManager.GameStatus.endGame);
+            GManager.Instance.timer = Time.time + GManager.Instance.gameResetTimer;
         }
         else
         {
            GManager.Instance.ChangeGameStatus(GManager.GameStatus.endTurn);
+           GManager.Instance.timer = Time.time + GManager.Instance.turnResetTimer;
         }
-        GManager.Instance.resetTimer = Time.time + GManager.Instance.resetDelay;
+        
     }
 
     private void ExplodeCharacter()

@@ -26,7 +26,7 @@ public class PlayerControler : NetworkBehaviour {
     public float livesPositionX;
     public float livesPositionY;
     [SyncVar]
-    public int playerLives = 3;
+    public int playerLives;
     public GameObject LiveObject;
     public List<GameObject> lives = new List<GameObject>();
 
@@ -56,12 +56,12 @@ public class PlayerControler : NetworkBehaviour {
     //Player settings 
     [SyncVar] // Is it necessary ?
     public GameObject Settings;
-    [SyncVar] 
+    [SyncVar]
     public string playerName;
     [SyncVar]
     public Color32 playerColor;
     [SyncVar]
-    public bool playerReady = false; 
+    public bool playerReady = false;
 
     void Start()
     {
@@ -73,6 +73,7 @@ public class PlayerControler : NetworkBehaviour {
         speed = defaultSpeed;
         bombPower = defaultBombPower;
         bombLimit = defaultBombLimit;
+        playerLives = GManager.Instance.playersLives;
         isColliding = false;
 
         if (isLocalPlayer)
@@ -82,21 +83,21 @@ public class PlayerControler : NetworkBehaviour {
     }
 
     private void Update()
-    {        
+    {
         if (alive && GManager.Instance.GetGameState() == GManager.GameStatus.start)
         {
             if (!isLocalPlayer)
             {
                 return;
             }
-            
+
 
             if (Input.GetKeyDown("space") && bombLimit > 0)
             {
 
                 CmdAddBomb(plant, gameObject);
             }
-        }        
+        }
     }
 
     void FixedUpdate()
@@ -219,7 +220,13 @@ public class PlayerControler : NetworkBehaviour {
         {
             gameObject.GetComponent<PlayerDeath>().LoseBoard.SetActive(true);
         }
-    } 
+    }
+    [ClientRpc]
+    public void RpcResetPlayerScreen()
+    {
+        gameObject.GetComponent<PlayerDeath>().WinBoard.SetActive(false);
+        gameObject.GetComponent<PlayerDeath>().LoseBoard.SetActive(false);
+    }
 
     [ClientRpc]
     public void RpcResetPlayer()
@@ -235,7 +242,11 @@ public class PlayerControler : NetworkBehaviour {
         bombPower = defaultBombPower;
         canKick = false;
         speed = defaultSpeed;
-
+    }
+    [ClientRpc]
+    public void RpcResetPlayerLives()
+    {
+        playerLives = GManager.Instance.playersLives;
     }
 
     [Command]

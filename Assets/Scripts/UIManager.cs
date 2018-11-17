@@ -56,9 +56,17 @@ public class UIManager : NetworkBehaviour {
         {
             Debug.Log("Wrong player id");
         }
-    }   
+    }
+    [ClientRpc]
+    public void RpcResetLives()    
+    {
+        player1Live1.enabled = true;
+        player1Live2.enabled = true;
+        player0Live1.enabled = true;
+        player0Live2.enabled = true;
+    }
 
-    
+
     public void SetPlayerName(string _name, int playerId, Color32 color)
     {
         if (playerId == 0)

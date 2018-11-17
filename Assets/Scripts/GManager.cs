@@ -64,10 +64,12 @@ public class GManager : NetworkBehaviour {
     public GameStatus gameStatus = GameStatus.notStart;
     public GameObject WaitForOthers;
     public GameObject LookingForOthers;
+    public float gameResetTimer = 3.0f;
+    public int playersLives = 3;
     public int maxPlayers = 2;
     public int pointsToWin = 3;    
-    public float resetDelay = 3;
-    public float resetTimer;
+    public float turnResetTimer;
+    public float timer;
 
     private void Awake()
     {
@@ -90,6 +92,7 @@ public class GManager : NetworkBehaviour {
 
     private void Update()
     {
+        Debug.Log(gameStatus);
         if (players.Count == maxPlayers)
         {
             LookingForOthers.SetActive(false);
@@ -114,18 +117,10 @@ public class GManager : NetworkBehaviour {
                 gameStatus = GameStatus.start;                
             } 
         }
-
-        if (gameStatus == GameStatus.start)
-        {
-            /*foreach (GameObject player in players)
-            {
-                player.GetComponent<PlayerControler>().CmdPlayerSettingsUpdate();
-            } */         
-        }
-
+                
         if (gameStatus == GameStatus.endTurn)
         {
-            if (Time.time > resetTimer)
+            if (Time.time > timer)
             {
                 for (int i = 0; i < players.Count; i++)
                 {
@@ -133,8 +128,9 @@ public class GManager : NetworkBehaviour {
                     if (!player.alive)
                     {
                         UIManager.Instance.RpcSetPlayerLive(player.playerLives, player.Id);
+                        players[i].GetComponent<PlayerControler>().RpcResetPlayer();
                     }
-                    players[i].GetComponent<PlayerControler>().RpcResetPlayer();
+                    
                 }
                 gameStatus = GameStatus.start;
             }
@@ -144,8 +140,15 @@ public class GManager : NetworkBehaviour {
             foreach (GameObject player in players)
             {
                 player.GetComponent<PlayerControler>().RpcUpdatePlayerScreen();
-            }
-        }        
+            }            
+        }
+
+        if (gameStatus == GameStatus.endGame && timer < Time.time)
+        {
+            Debug.Log("Rdy to reset");
+            gameStatus = GameStatus.start;
+            CmdResetGame();
+        }
     }
 
     public void AddPlayer(GameObject _player)
@@ -207,5 +210,35 @@ public class GManager : NetworkBehaviour {
                 return;
             }
         }
+    }
+    
+    public void RemoveAllObjects()
+    {
+        foreach (Field field in fields)
+        {            
+            Destroy(field.GetContent());
+        }
+        fields = new List<Field>();
+    }
+
+    [Command]
+    private void CmdResetGame()
+    {
+        Debug.Log("Enter reseting");
+        RemoveAllObjects();
+        BoxManagement.Instance.SpawnBoxes();
+        Debug.Log("Box reseted");
+        for (int i = 0; i < players.Count; i++)
+        {
+            var controller = players[i].GetComponent<PlayerControler>();
+            controller.RpcResetPlayer();
+           // Debug.Log("Player reseted");
+            controller.RpcResetPlayerLives();
+           // Debug.Log("Player lives reseted");
+            //controller.RpcUpdatePlayerScreen();            
+            controller.RpcResetPlayerScreen();
+          //  Debug.Log("Screen reseted");            
+        }
+        UIManager.Instance.RpcResetLives();
     }
 }
