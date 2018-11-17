@@ -36,7 +36,7 @@ public class PlayerDeath : NetworkBehaviour {
         player.alive = false;
         player.playerSprite.enabled = false;
         deadPlayer.SetActive(true);
-        AudioManager.Instance.RpcPlay("scream");
+        AudioManager.Instance.CmdPlay("scream");
         player.playerLives -= 1;
         ExplodeCharacter();
     }

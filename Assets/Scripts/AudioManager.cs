@@ -29,7 +29,11 @@ public class AudioManager : NetworkBehaviour {
             s.source.playOnAwake = false;
         }		
 	}
-
+    [Command]
+    public void CmdPlay(string name)
+    {
+        RpcPlay(name);
+    }
     [ClientRpc]
     public void RpcPlay(string name)
     {

@@ -2179,9 +2179,9 @@ MonoBehaviour:
   bomb: {fileID: 1614706204237482, guid: 360b4cc0563625846b2fa7feaca418af, type: 2}
   plant: {x: 0, y: 0}
   explosionTimer: 3
-  explosionDuration: 0.5
+  explosionDuration: 1
   Id: 0
-  defaultSpeed: 1000
+  defaultSpeed: 1500
   speed: 1500
   defaultBombLimit: 1
   bombLimit: 2
