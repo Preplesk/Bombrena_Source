@@ -5,11 +5,13 @@ using UnityEngine.Networking;
 
 public class PlayerControler : NetworkBehaviour {
 
-    // Player movement variables
-    Rigidbody2D Player; 
+    Rigidbody2D Player;
     Vector2 input;
     Transform Collider;
     Animator playerAnimator;
+
+
+    // Player movement variables
     public SpriteRenderer playerSprite;
     float horizontal;
     float vertical;
@@ -18,8 +20,8 @@ public class PlayerControler : NetworkBehaviour {
     private bool isRight = true;
     [SyncVar]
     public bool alive = true;
-    [SyncVar]
-    public string playerName;
+    bool isColliding;
+
     // Lives     
     public float livesPositionX;
     public float livesPositionY;
@@ -28,28 +30,34 @@ public class PlayerControler : NetworkBehaviour {
     public GameObject LiveObject;
     public List<GameObject> lives = new List<GameObject>();
 
-    bool isColliding;
-
     // Player bomb management 
     public GameObject bomb;
     [SyncVar]
     public Vector2 plant;
-
     public float explosionTimer = 3;
     public float explosionDuration = 1;
 
     //Player properties
     private Vector2 defaultPosition;
     public int Id;
-    public float speed = 1000;
+    public float defaultSpeed = 1000;
+    [HideInInspector]
+    public float speed;
+    public int defaultBombLimit = 1;
+    [HideInInspector]
     [SyncVar]
-    public int bombLimit = 3;
+    public int bombLimit;
+    public float defaultBombPower = 2;
+    [HideInInspector]
+    [SyncVar]
     public float bombPower = 3;
     public bool canKick = false;
 
     //Player settings 
-    [SyncVar]
+    [SyncVar] // Is it necessary ?
     public GameObject Settings;
+    [SyncVar] 
+    public string playerName;
     [SyncVar]
     public Color32 playerColor;
     [SyncVar]
@@ -62,7 +70,11 @@ public class PlayerControler : NetworkBehaviour {
         playerAnimator = gameObject.GetComponent<Animator>();
         GManager.Instance.AddPlayer(gameObject);
         playerSprite = gameObject.GetComponent<SpriteRenderer>();
+        speed = defaultSpeed;
+        bombPower = defaultBombPower;
+        bombLimit = defaultBombLimit;
         isColliding = false;
+
         if (isLocalPlayer)
         {
             Settings.SetActive(true);
@@ -149,7 +161,7 @@ public class PlayerControler : NetworkBehaviour {
             if (isColliding && horizontal != 0)
             {
                 if (Collider.position.y + tolerance < transform.position.y
-                    && transform.position.y < Collider.position.y + 6.0f) //obstacle collider size y + player colider size y /2
+                    && transform.position.y < Collider.position.y + 6.0f) //obstacle collider size y + player colider size y /2  <- Rework that later...
                 {
                     moveBy = new Vector2(horizontal, Mathf.Abs(horizontal));
                 }
@@ -219,10 +231,10 @@ public class PlayerControler : NetworkBehaviour {
         gameObject.GetComponent<PlayerDeath>().deadPlayer.SetActive(false);
         transform.position = defaultPosition;
         alive = true;
-        bombLimit = 3;
-        bombPower = 3;
+        bombLimit = defaultBombLimit;
+        bombPower = defaultBombPower;
         canKick = false;
-        speed = 1000;
+        speed = defaultSpeed;
 
     }
 

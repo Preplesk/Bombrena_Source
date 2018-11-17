@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 223294267559772702}
   - component: {fileID: 114904481370038792}
   - component: {fileID: 114048809166570596}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114952837478221300}
   - component: {fileID: 114982157824381146}
   - component: {fileID: 114420125206945212}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ColorButton7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 224465834188401168}
   - component: {fileID: 222751048909706544}
   - component: {fileID: 114804008821222240}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 224659082507644818}
   - component: {fileID: 222939607085736016}
   - component: {fileID: 114821832878855418}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 224360145420581188}
   - component: {fileID: 222920969861487840}
   - component: {fileID: 114206086132530446}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 114576480136389872}
   - component: {fileID: 114054385315049550}
   - component: {fileID: 114027697398631324}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ColorButton5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 114231161741737934}
   - component: {fileID: 114907323417470620}
   - component: {fileID: 114203652187506706}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ColorButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 212895670639592272}
   - component: {fileID: 54687992882832570}
   - component: {fileID: 65384976267536166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: leftheand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 114034553504488192}
   - component: {fileID: 114321717872260804}
   - component: {fileID: 114032494127236896}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ColorButton3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 222347353748723484}
   - component: {fileID: 114142678286093472}
   - component: {fileID: 114738451021256776}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 224777090023416658}
   - component: {fileID: 222411075039567886}
   - component: {fileID: 114129863481107042}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 114633767417447394}
   - component: {fileID: 114849857799061750}
   - component: {fileID: 114802635080467540}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ColorButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   - component: {fileID: 114062683111946402}
   - component: {fileID: 114736525090244120}
   - component: {fileID: 114989086166623466}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ColorButton6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ GameObject:
   - component: {fileID: 224303295591767182}
   - component: {fileID: 222443474277913454}
   - component: {fileID: 114908215433232880}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   - component: {fileID: 212026003307193958}
   - component: {fileID: 54699560793057600}
   - component: {fileID: 65837987950764522}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: leftleg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 224458782350123340}
   - component: {fileID: 222548328011419564}
   - component: {fileID: 114444202807264250}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: PlayerSettings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 114875774681519750}
   - component: {fileID: 114861085290151536}
   - component: {fileID: 114409973482617898}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 224432906859109594}
   - component: {fileID: 222957024128755480}
   - component: {fileID: 114009262863119522}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 224262681066392328}
   - component: {fileID: 222545233926186024}
   - component: {fileID: 114431325228584828}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: YourName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 224085493403721130}
   - component: {fileID: 222795492457236476}
   - component: {fileID: 114043335844251726}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 212836949315568340}
   - component: {fileID: 54323990048952260}
   - component: {fileID: 65855370170369224}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CharacterHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 114599368886687136}
   - component: {fileID: 114758706714541766}
   - component: {fileID: 114392552803471332}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 114576362626753984}
   - component: {fileID: 114195022512735592}
   - component: {fileID: 114771287193113184}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ColorButton9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 224692136234632644}
   - component: {fileID: 222132850433685302}
   - component: {fileID: 114183029560021756}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: 'PlayerName '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 114647411481650826}
   - component: {fileID: 114828521690102686}
   - component: {fileID: 114137842264792226}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ColorButton4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 114156652074477028}
   - component: {fileID: 114596162096617278}
   - component: {fileID: 114636825768339912}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ColorButton10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 212279023336172230}
   - component: {fileID: 54948351515779632}
   - component: {fileID: 65504489341239196}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightHeand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 222275418028196508}
   - component: {fileID: 114482712019744012}
   - component: {fileID: 114080340729853698}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: InputName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4098466885974206}
   - component: {fileID: 61128813368889544}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlantPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4257739483561620}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -561,7 +561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4872077882117666}
   - component: {fileID: 114644787981921586}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerSettings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -578,7 +578,7 @@ GameObject:
   - component: {fileID: 224420217646793502}
   - component: {fileID: 222230156305671890}
   - component: {fileID: 114803114265069148}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: 222739123770923518}
   - component: {fileID: 114876077103766762}
   - component: {fileID: 114492444825786852}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 212714828812172642}
   - component: {fileID: 54114521653272452}
   - component: {fileID: 65515318437962064}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,7 +633,7 @@ GameObject:
   - component: {fileID: 114897686173010652}
   - component: {fileID: 114146684034238780}
   - component: {fileID: 114982016706735702}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: ColorButton8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 224558441249352146}
   - component: {fileID: 222585523499479310}
   - component: {fileID: 114068679140504826}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -668,7 +668,7 @@ GameObject:
   - component: {fileID: 212377919487150192}
   - component: {fileID: 54911871879066054}
   - component: {fileID: 65050998146203232}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: rightleg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -686,7 +686,7 @@ GameObject:
   - component: {fileID: 223467016861042932}
   - component: {fileID: 114739256112113928}
   - component: {fileID: 114201562308659326}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +704,7 @@ GameObject:
   - component: {fileID: 222991908351382952}
   - component: {fileID: 114701281243213702}
   - component: {fileID: 114857025169658238}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 224088583253355014}
   - component: {fileID: 222164542591824838}
   - component: {fileID: 114316317199014778}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -738,7 +738,7 @@ GameObject:
   - component: {fileID: 224832038270933330}
   - component: {fileID: 222916095143666972}
   - component: {fileID: 114944188978998374}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Colors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 224264629320323502}
   - component: {fileID: 222110257198765694}
   - component: {fileID: 114243874080880668}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -772,7 +772,7 @@ GameObject:
   - component: {fileID: 224191558527164564}
   - component: {fileID: 222961836196709508}
   - component: {fileID: 114396510508139510}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 224231763015185124}
   - component: {fileID: 222773463090169128}
   - component: {fileID: 114134084558284628}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Image (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -804,7 +804,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4913655121128928}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Lose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -819,7 +819,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4253081581483662}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerDeath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2171,7 +2171,6 @@ MonoBehaviour:
   playerSprite: {fileID: 212157101377676318}
   tolerance: 2
   alive: 1
-  playerName: 
   livesPositionX: 58
   livesPositionY: 24
   playerLives: 3
@@ -2180,13 +2179,17 @@ MonoBehaviour:
   bomb: {fileID: 1614706204237482, guid: 360b4cc0563625846b2fa7feaca418af, type: 2}
   plant: {x: 0, y: 0}
   explosionTimer: 3
-  explosionDuration: 1
+  explosionDuration: 0.5
   Id: 0
-  speed: 1300
+  defaultSpeed: 1000
+  speed: 1500
+  defaultBombLimit: 1
   bombLimit: 2
+  defaultBombPower: 2
   bombPower: 2
   canKick: 0
   Settings: {fileID: 1620441976397732}
+  playerName: 
   playerColor:
     serializedVersion: 2
     rgba: 0
