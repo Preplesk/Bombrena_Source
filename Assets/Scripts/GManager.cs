@@ -232,12 +232,8 @@ public class GManager : NetworkBehaviour {
         {
             var controller = players[i].GetComponent<PlayerControler>();
             controller.RpcResetPlayer();
-           // Debug.Log("Player reseted");
-            controller.RpcResetPlayerLives();
-           // Debug.Log("Player lives reseted");
-            //controller.RpcUpdatePlayerScreen();            
-            controller.RpcResetPlayerScreen();
-          //  Debug.Log("Screen reseted");            
+            controller.RpcResetPlayerLives();           
+            controller.RpcResetPlayerScreen(); 
         }
         UIManager.Instance.RpcResetLives();
     }

@@ -111,7 +111,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 e90359c664c461fbfd951b605323ec60 Assembly-CSharp.dll:.PlayerSettings
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-77db9e160ced2b3531b149ab8b616da3 Assembly-CSharp.dll:.BoxManagement
+636f888cead02711b2f494619b414559 Assembly-CSharp.dll:.BoxManagement
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 54025dfb2be1ffdf7068c5730d928483 Assembly-CSharp.dll:.BoxBehave
@@ -124,6 +124,7 @@ d9a042267d0c0100cc6e04dfccd4a7fe Assembly-CSharp.dll:.PlayerDeath
 312ce79b8d947f454f2337f60087461f Assembly-CSharp.dll:.ButtonColorChange
 8080da1591b4a911acdf0c358d4ce2ab Assembly-CSharp.dll:.UnitBehave
 b923eb95ba402d65b929052b6fe08fea Assembly-CSharp.dll:.AudioManager
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PlantTrigger
 32e8fe00b63ed946490b898f6024a2f2 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
@@ -160,6 +161,6 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 c0dd0b786ec6457391f18b0bcbcf160d Assembly-CSharp.dll:.Explosions
+3078789d03b370d25a4f5fc2b32d8ffd Assembly-CSharp.dll:.RandomBoxScript
 0a6c5ce607e18a3b26dae67807b473c4 Assembly-CSharp.dll:.BombBehave
 edfae3f16e4f6f1b2ccdc6f393e92656 Assembly-CSharp.dll:.speedItem
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PlantTrigger

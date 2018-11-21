@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\PlantTrigger.cs" />
+    <Compile Include="Assets\RandomBoxScript.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BombBehave.cs" />
     <Compile Include="Assets\Scripts\BombItem.cs" />

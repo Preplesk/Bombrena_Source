@@ -2181,9 +2181,9 @@ MonoBehaviour:
   explosionTimer: 3
   explosionDuration: 1
   Id: 0
-  defaultSpeed: 2000
+  defaultSpeed: 1300
   speed: 1500
-  defaultBombLimit: 10
+  defaultBombLimit: 1
   bombLimit: 2
   defaultBombPower: 2
   bombPower: 2

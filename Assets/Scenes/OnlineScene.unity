@@ -1760,7 +1760,10 @@ MonoBehaviour:
   width: 8
   height: 6
   maxPlayers: 0
+  boxSpawnTimer: 5
+  timer: 0
   Box: {fileID: 1828391969253736, guid: a88b3fa9344e37e40891cdaa59f0aab9, type: 2}
+  newBox: {fileID: 1880617706678718, guid: 13ba2b4fe4c1c324694db5be90f62be4, type: 2}
   spawn1: {fileID: 42321288}
   spawn2: {fileID: 772970510}
   spawn3: {fileID: 52736813}
@@ -1981,7 +1984,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Ver. 1.1'
+  m_Text: ' Ver. 1.3'
 --- !u!222 &444374052
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5304,6 +5307,7 @@ MonoBehaviour:
   - {fileID: 1402848758091368, guid: 1bf27c5aa0ab7db45a803a9945d1b352, type: 2}
   - {fileID: 1834105452225670, guid: c156f119a5e98154db345e07e34b451d, type: 2}
   - {fileID: 1164929918058576, guid: 8bca4d49a141b65408f2e75c498066f3, type: 2}
+  - {fileID: 1880617706678718, guid: 13ba2b4fe4c1c324694db5be90f62be4, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 2
   m_ConnectionConfig:

@@ -10,7 +10,11 @@ public class BoxManagement : NetworkBehaviour {
     public int width;
     public int height;
     public bool maxPlayers = false;
+    public float boxSpawnTimer;
+    [SerializeField]
+    private float timer;
     public GameObject Box;
+    public GameObject newBox;
     public Transform spawn1 ;
     public Transform spawn2 ;
     public Transform spawn3 ;
@@ -18,7 +22,6 @@ public class BoxManagement : NetworkBehaviour {
     public int spawnRange;
     List<Transform> spawns = new List<Transform>();
 
-    // 
     private void Awake()
     {
         if (Instance == null)
@@ -33,8 +36,7 @@ public class BoxManagement : NetworkBehaviour {
     }
 
     public override void OnStartServer()
-    {
-        
+    {        
         if (maxPlayers)
         {
             spawns.Add(spawn1);
@@ -49,7 +51,35 @@ public class BoxManagement : NetworkBehaviour {
         }
         SpawnBoxes();        
     }
+    private void Start()
+    {
+        if (isServer)
+        {
+            if (GManager.Instance.gameStatus == GManager.GameStatus.start)
+            {                
+                timer = Time.time + boxSpawnTimer;
+            }
+        }
+    }
+
+    private void Update()
+    {   
+        
+        if (isServer)
+        {
+            if (GManager.Instance.gameStatus == GManager.GameStatus.start)
+            {
+                if (timer < Time.time)
+                {
+                    Debug.Log("Call for spawn new box");
+                    SpawnRandomBox();
+                    timer = Time.time + boxSpawnTimer;
+                }
+            }
+        }
     
+    }
+
     private bool SpawnRate()
     {
         int n = Random.Range(0, spawnRange);
@@ -83,14 +113,35 @@ public class BoxManagement : NetworkBehaviour {
                 {
                     SpawnBox(tempPosition);
                 }
-
             }
         }
     }
 
-    private void SpawnBox(Vector2 pos)
+    public void SpawnRandomBox()
+    {
+        Vector2 spawn;
+        
+        float y = Random.Range(height / -2, height / 2);
+        float x = Random.Range(width / -2, width / 2);
+        spawn = new Vector2(x*6, y*6);
+
+        if ((GManager.Instance.CheckFields(spawn) && !CheckSpawn(spawn)))
+        {
+            SpawnBox(spawn, newBox);
+        }
+    }
+
+    public void SpawnBox(Vector2 pos)
     {
         var box = Instantiate(Box, pos, Quaternion.identity);
+        GManager.Instance.AddField(box);
+        NetworkServer.Spawn(box);
+    }
+
+    public void SpawnBox(Vector2 pos, GameObject newBox)
+    {
+        Debug.Log("Inside spawning fcion");
+        var box = Instantiate(newBox, pos, Quaternion.identity);
         GManager.Instance.AddField(box);
         NetworkServer.Spawn(box);
     }

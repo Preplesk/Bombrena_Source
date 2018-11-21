@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 471}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 713, y: 492}
-  m_MaxSize: {x: 18008, y: 14042}
+  m_MinSize: {x: 679, y: 421}
+  m_MaxSize: {x: 12004, y: 8042}
   vertical: 0
-  controlID: 131
+  controlID: 52
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,8 +130,8 @@ MonoBehaviour:
     y: 0
     width: 1366
     height: 947
-  m_MinSize: {x: 436, y: 492}
-  m_MaxSize: {x: 14006, y: 14042}
+  m_MinSize: {x: 404, y: 421}
+  m_MaxSize: {x: 8004, y: 8042}
   vertical: 1
   controlID: 53
 --- !u!114 &7
@@ -154,8 +154,8 @@ MonoBehaviour:
     y: 0
     width: 1366
     height: 457
-  m_MinSize: {x: 406, y: 221}
-  m_MaxSize: {x: 8006, y: 4021}
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
   vertical: 0
   controlID: 54
 --- !u!114 &8
@@ -176,8 +176,8 @@ MonoBehaviour:
     y: 0
     width: 472
     height: 457
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -231,10 +231,10 @@ MonoBehaviour:
     y: 457
     width: 1366
     height: 490
-  m_MinSize: {x: 436, y: 271}
-  m_MaxSize: {x: 14006, y: 10021}
+  m_MinSize: {x: 302, y: 200}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 110
+  controlID: 119
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -253,14 +253,14 @@ MonoBehaviour:
     y: 0
     width: 651
     height: 490
-  m_MinSize: {x: 232, y: 271}
-  m_MaxSize: {x: 10002, y: 10021}
-  m_ActualView: {fileID: 20}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 20}
   - {fileID: 21}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -279,8 +279,8 @@ MonoBehaviour:
     y: 0
     width: 715
     height: 490
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -304,8 +304,8 @@ MonoBehaviour:
     y: 0
     width: 554
     height: 947
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 22}
   m_Panes:
   - {fileID: 22}
@@ -416,21 +416,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: e83ff5ff8440f5ffae41f5fff675f5ff9276f5ffc077f5ffeeb0f5ff7cb1f5ffaab2f5ff7813f6ff0014f6ff2e15f6ff9a4cf6ff364df6ff604ef6ff0c87f6ffa687f6ffd088f6ff7047f7fff047f7ff1a49f7ffc24bf7ff424cf7ff6c4df7ff16a8f7ff94a8f7ffbea9f7ff9a27f8ff1628f8ff4029f8ffa232f9ff0833f9ff3234f9ff281ffcffac1ffcffd620fcff02a6fdff68a6fdff98a7fdff2c6bfeffaa7cfeff307dfeff5a7efeff92a4feff28a5feff56a6feff88d3feff1cd4feff46d5feffe4f4feffb8f7fefffcf8feff902bffff142cffff582dfffffe6cffff6a6dffff9c6effff50f4ffff0000000098310000c8310000aa550000025600004a9e0000a29e0000
+    m_ExpandedIDs: e0bbf8ff58bcf8ff84bdf8fff217f9ff6818f9ff9419f9ff7e85f9ff0286f9ff2e87f9ff16d7f9ff96d7f9ffc2d8f9ff163bffffae41ffff3442ffff6043fffffa46ffff8047ffffbe48ffff208dffffa68dffffd28effff96e7ffff22e8ffff4ee9ffffb2ecffff3eedffff6aeeffff3af2ffffc4f2fffff0f3ffff4cfbfffff4ffffff00000000ec5c00004c5d0000f45e000062ab00006ead0000b6ad0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: GameBoard
-      m_OriginalName: GameBoard
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 40610
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -471,9 +471,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 295.55417, y: 185.49643, z: 13.270065}
+    m_Target: {x: 4.407199, y: 2.817524, z: 17.609375}
     speed: 2
-    m_Value: {x: 295.55417, y: 185.49643, z: 13.270065}
+    m_Value: {x: 4.407199, y: 2.817524, z: 17.609375}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -505,9 +505,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 488.9209
+    m_Target: 54.921646
     speed: 2
-    m_Value: 488.9209
+    m_Value: 54.921646
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -703,20 +703,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 79
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Prefabs
   m_LastFoldersGridSize: 79
   m_LastProjectPath: D:\Project\Bombrena\Bombrena\Bombrena_Source
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 42300000
-    m_LastClickedID: 12354
-    m_ExpandedIDs: 00000000682e0000a42e00001a31000000ca9a3bffffff7f
+    m_SelectedIDs: 122a0000
+    m_LastClickedID: 10770
+    m_ExpandedIDs: 00000000b6290000122a0000282d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -744,7 +744,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000682e0000a42e00001a310000
+    m_ExpandedIDs: 00000000b6290000122a0000282d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -877,10 +877,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1364
-    y: 100
-    width: 548
-    height: 910
+    x: 1368
+    y: 92
+    width: 552
+    height: 926
   m_PersistentViewDataDictionary: {fileID: 0}
   m_InitialOpenURL: https://public-cdn.cloud.unity3d.com/editor/production/cloud/hub
   m_GlobalObjectTypeName: 
