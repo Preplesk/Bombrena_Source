@@ -80,7 +80,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-eb168ea9c0942692cee433423e0bf0b0 Assembly-CSharp.dll:.PlayerControler
+11956ae0643c82b2c7d549d195138eed Assembly-CSharp.dll:.PlayerControler
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 cf455f7a806648c6ed4c7d3e3f8a0e03 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 13bdb7c23815c33a33b37b0ba8dd39be UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -122,7 +122,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 d9a042267d0c0100cc6e04dfccd4a7fe Assembly-CSharp.dll:.PlayerDeath
 312ce79b8d947f454f2337f60087461f Assembly-CSharp.dll:.ButtonColorChange
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.UnitBehave
+8080da1591b4a911acdf0c358d4ce2ab Assembly-CSharp.dll:.UnitBehave
 b923eb95ba402d65b929052b6fe08fea Assembly-CSharp.dll:.AudioManager
 32e8fe00b63ed946490b898f6024a2f2 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -162,3 +162,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 c0dd0b786ec6457391f18b0bcbcf160d Assembly-CSharp.dll:.Explosions
 0a6c5ce607e18a3b26dae67807b473c4 Assembly-CSharp.dll:.BombBehave
 edfae3f16e4f6f1b2ccdc6f393e92656 Assembly-CSharp.dll:.speedItem
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PlantTrigger

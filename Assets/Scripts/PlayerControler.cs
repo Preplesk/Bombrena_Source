@@ -10,7 +10,6 @@ public class PlayerControler : NetworkBehaviour {
     Transform Collider;
     Animator playerAnimator;
 
-
     // Player movement variables
     public SpriteRenderer playerSprite;
     float horizontal;
@@ -33,7 +32,7 @@ public class PlayerControler : NetworkBehaviour {
     // Player bomb management 
     public GameObject bomb;
     [SyncVar]
-    public Vector2 plant;
+    public bool plant;
     public float explosionTimer = 3;
     public float explosionDuration = 1;
 
@@ -92,11 +91,12 @@ public class PlayerControler : NetworkBehaviour {
             }
 
 
-            if (Input.GetKeyDown("space") && bombLimit > 0)
+            if (Input.GetButtonDown("PlaceBomb") && bombLimit > 0)
             {
-
-                CmdAddBomb(plant, gameObject);
+                plant = true;
+                Debug.Log("space pressed");
             }
+            else plant = false;
         }
     }
 
@@ -250,9 +250,9 @@ public class PlayerControler : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdAddBomb(Vector2 _plant, GameObject _player) 
+    public void CmdAddBomb(Vector2 _plant, GameObject _player)
     {
-        bool isFree = GManager.Instance.CheckFields(_plant);        
+        bool isFree = GManager.Instance.CheckFields(_plant);
 
         if (isFree)
         {
@@ -261,11 +261,10 @@ public class PlayerControler : NetworkBehaviour {
             GManager.Instance.AddField(_bomb, _player);
             NetworkServer.Spawn(_bomb);
             AudioManager.Instance.RpcPlay("cackle");
-            _player.GetComponent<PlayerControler>().bombLimit -= 1;           
-        }          
+            _player.GetComponent<PlayerControler>().bombLimit -= 1;
+        }
     }
 
-    
     [Command]
     public void CmdPlayerSettings( Color32 color, string name )
     {

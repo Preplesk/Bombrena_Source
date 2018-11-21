@@ -2177,13 +2177,13 @@ MonoBehaviour:
   LiveObject: {fileID: 1164929918058576, guid: 8bca4d49a141b65408f2e75c498066f3, type: 2}
   lives: []
   bomb: {fileID: 1614706204237482, guid: 360b4cc0563625846b2fa7feaca418af, type: 2}
-  plant: {x: 0, y: 0}
+  plant: 0
   explosionTimer: 3
   explosionDuration: 1
   Id: 0
-  defaultSpeed: 1500
+  defaultSpeed: 2000
   speed: 1500
-  defaultBombLimit: 1
+  defaultBombLimit: 10
   bombLimit: 2
   defaultBombPower: 2
   bombPower: 2
@@ -3002,8 +3002,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 2
-  m_SendInterval: 0.033333335
-  m_SyncRotationAxis: 3
+  m_SendInterval: 0.05263158
+  m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
   m_MovementTheshold: 0.001
