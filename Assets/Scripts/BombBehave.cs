@@ -5,12 +5,12 @@ using UnityEngine.Networking;
 
 public class BombBehave : NetworkBehaviour
 {
-
     public bool detonate = false;
     public bool explosion = false;
     public GameObject Bomb;
     public float explosionTimer = 3;
     public float explosionDuration = 1;
+    public float explosionPower; 
     private float explosionTime;
     public GameObject ExplosionRight;
     public GameObject ExplosionLeft;
@@ -25,7 +25,6 @@ public class BombBehave : NetworkBehaviour
         }
     }
 
-
     void Update()
     {
         if (isServer)
@@ -35,7 +34,7 @@ public class BombBehave : NetworkBehaviour
             {
                 RpcUpdateClientBomb();
                 AudioManager.Instance.RpcPlay("explosion");
-                SpawnExplosions();
+                SpawnExplosions(explosionPower,transform.position);
                 
             }
             if (explosion && explosionTime < Time.time)
@@ -44,21 +43,25 @@ public class BombBehave : NetworkBehaviour
             }
         }
     }
-    private void SpawnExplosions()
+    public void SpawnExplosions(float explosionPower, Vector2 pos)
     {
-        var Explosion = Instantiate(ExplosionRight, transform.position, Quaternion.identity);
+        var Explosion = Instantiate(ExplosionRight, pos, Quaternion.identity);
+        Explosion.GetComponent<Explosions>().explosionDistance = explosionPower;
         NetworkServer.Spawn(Explosion);
         Destroy(Explosion,explosionDuration);
 
-        Explosion = Instantiate(ExplosionLeft, transform.position, Quaternion.identity);
+        Explosion = Instantiate(ExplosionLeft, pos, Quaternion.identity);
+        Explosion.GetComponent<Explosions>().explosionDistance = explosionPower;
         NetworkServer.Spawn(Explosion);
         Destroy(Explosion, explosionDuration);
-
-        Explosion = Instantiate(ExplosionUp, transform.position, Quaternion.identity);
+                
+        Explosion = Instantiate(ExplosionUp, pos, Quaternion.identity);
+        Explosion.GetComponent<Explosions>().explosionDistance = explosionPower;
         NetworkServer.Spawn(Explosion);
         Destroy(Explosion, explosionDuration);
-
-        Explosion = Instantiate(ExplosionDown, transform.position, Quaternion.identity);
+                
+        Explosion = Instantiate(ExplosionDown, pos, Quaternion.identity);
+        Explosion.GetComponent<Explosions>().explosionDistance = explosionPower;
         NetworkServer.Spawn(Explosion);
         Destroy(Explosion, explosionDuration);
     }

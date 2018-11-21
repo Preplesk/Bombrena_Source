@@ -2185,8 +2185,8 @@ MonoBehaviour:
   speed: 1500
   defaultBombLimit: 1
   bombLimit: 2
-  defaultBombPower: 2
-  bombPower: 2
+  bombPower: 1
+  defaultBombPower: 1
   canKick: 0
   Settings: {fileID: 1620441976397732}
   playerName: 

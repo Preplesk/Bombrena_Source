@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class Explosions : NetworkBehaviour {
 
-    private float bombDistance = 2;    
+    public float explosionDistance;    
     private float targetX; 
     private float targetY;
     public bool spreading = true;
@@ -24,18 +24,19 @@ public class Explosions : NetworkBehaviour {
             explosionDuration = bombObject.GetComponent<BombBehave>().explosionDuration;
             if (isNegative)
             {
-                targetX = GetComponent<Transform>().position.x - 6 * bombDistance;
-                targetY = GetComponent<Transform>().position.y - 6 * bombDistance;
+                targetX = GetComponent<Transform>().position.x - 6 * explosionDistance;
+                targetY = GetComponent<Transform>().position.y - 6 * explosionDistance;
             }
             else
             {
-                targetX = GetComponent<Transform>().position.x + 6 * bombDistance;
-                targetY = GetComponent<Transform>().position.y + 6 * bombDistance;
+                targetX = GetComponent<Transform>().position.x + 6 * explosionDistance;
+                targetY = GetComponent<Transform>().position.y + 6 * explosionDistance;
             }
         }
     }
         
     void Update () {
+
         if (isServer)
         {
             if (isX)
@@ -110,7 +111,7 @@ public class Explosions : NetworkBehaviour {
     {
         if (isServer)
         {
-            if (collision.tag == "Obstacle" && spreading)
+            if (collision.tag == "Obstacle" || collision.tag == "Item" && spreading)
             {
                 if (isX)
                 {
@@ -152,7 +153,7 @@ public class Explosions : NetworkBehaviour {
                         {
                             transform.position = new Vector2(transform.position.x + 5 - moveBy, transform.position.y);
                             RpcUpdateExplosion(transform.position);
-                            if (bombDistance > 1)
+                            if (explosionDistance > 1)
                             {
                                 var ExplosionTail = Instantiate(explosionTail, new Vector2(transform.position.x - 6, transform.position.y), Quaternion.identity);
                                 NetworkServer.Spawn(ExplosionTail);
@@ -163,7 +164,7 @@ public class Explosions : NetworkBehaviour {
                         {
                             transform.position = new Vector2(transform.position.x - 5 + moveBy, transform.position.y);
                             RpcUpdateExplosion(transform.position);
-                            if (bombDistance > 1)
+                            if (explosionDistance > 1)
                             {
                                 var ExplosionTail = Instantiate(explosionTail, new Vector2(transform.position.x + 6, transform.position.y), Quaternion.identity);
                                 NetworkServer.Spawn(ExplosionTail);
@@ -178,7 +179,7 @@ public class Explosions : NetworkBehaviour {
                         {
                             transform.position = new Vector2(transform.position.x, transform.position.y + 5 - moveBy );
                             RpcUpdateExplosion(transform.position);
-                            if (bombDistance > 1)
+                            if (explosionDistance > 1)
                             {
                                 var ExplosionTail = Instantiate(explosionTail, new Vector2(transform.position.x, transform.position.y - 6), Quaternion.identity);
                                 NetworkServer.Spawn(ExplosionTail);
@@ -189,7 +190,7 @@ public class Explosions : NetworkBehaviour {
                         {
                             transform.position = new Vector2(transform.position.x, transform.position.y - 5 + moveBy );
                             RpcUpdateExplosion(transform.position);
-                            if (bombDistance > 1)
+                            if (explosionDistance > 1)
                             {
                                 var ExplosionTail = Instantiate(explosionTail, new Vector2(transform.position.x, transform.position.y + 6), Quaternion.identity);
                                 NetworkServer.Spawn(ExplosionTail);

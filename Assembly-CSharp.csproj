@@ -63,7 +63,6 @@
     <Compile Include="Assets\RandomBoxScript.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Scripts\BombBehave.cs" />
-    <Compile Include="Assets\Scripts\BombItem.cs" />
     <Compile Include="Assets\Scripts\BombTriggers.cs" />
     <Compile Include="Assets\Scripts\BoxBehave.cs" />
     <Compile Include="Assets\Scripts\BoxManagement.cs" />
@@ -71,11 +70,11 @@
     <Compile Include="Assets\Scripts\Explosions.cs" />
     <Compile Include="Assets\Scripts\GManager.cs" />
     <Compile Include="Assets\Scripts\GUIManager.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\PlayerControler.cs" />
     <Compile Include="Assets\Scripts\PlayerDeath.cs" />
     <Compile Include="Assets\Scripts\PlayerSettings.cs" />
     <Compile Include="Assets\Scripts\Sound.cs" />
-    <Compile Include="Assets\Scripts\speedItem.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\UnitBehave.cs" />
     <Reference Include="UnityEditor.StandardEvents">

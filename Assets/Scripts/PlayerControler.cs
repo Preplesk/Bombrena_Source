@@ -34,7 +34,8 @@ public class PlayerControler : NetworkBehaviour {
     [SyncVar]
     public bool plant;
     public float explosionTimer = 3;
-    public float explosionDuration = 1;
+    public float explosionDuration = 1; 
+    
 
     //Player properties
     private Vector2 defaultPosition;
@@ -46,10 +47,11 @@ public class PlayerControler : NetworkBehaviour {
     [HideInInspector]
     [SyncVar]
     public int bombLimit;
-    public float defaultBombPower = 2;
+    [SyncVar]
+    public float bombPower = 1;
+    public float defaultBombPower = 1; // and this
     [HideInInspector]
     [SyncVar]
-    public float bombPower = 3;
     public bool canKick = false;
 
     //Player settings 
@@ -70,7 +72,7 @@ public class PlayerControler : NetworkBehaviour {
         GManager.Instance.AddPlayer(gameObject);
         playerSprite = gameObject.GetComponent<SpriteRenderer>();
         speed = defaultSpeed;
-        bombPower = defaultBombPower;
+        //bombPower = defaultBombPower;
         bombLimit = defaultBombLimit;
         playerLives = GManager.Instance.playersLives;
         isColliding = false;
@@ -258,6 +260,7 @@ public class PlayerControler : NetworkBehaviour {
         {
 
             var _bomb = Instantiate(bomb, _plant, Quaternion.identity);
+            _bomb.GetComponent<BombBehave>().explosionPower = bombPower;
             GManager.Instance.AddField(_bomb, _player);
             NetworkServer.Spawn(_bomb);
             AudioManager.Instance.RpcPlay("cackle");
