@@ -20,6 +20,7 @@ public class BoxManagement : NetworkBehaviour {
     public Transform spawn3 ;
     public Transform spawn4 ;
     public int spawnRange;
+    public Obstacle[] obstecles;
     List<Transform> spawns = new List<Transform>();
 
     private void Awake()
@@ -124,8 +125,8 @@ public class BoxManagement : NetworkBehaviour {
         float y = Random.Range(height / -2, height / 2);
         float x = Random.Range(width / -2, width / 2);
         spawn = new Vector2(x*6, y*6);
-
-        if ((GManager.Instance.CheckFields(spawn) && !CheckSpawn(spawn)))
+                
+        if ((GManager.Instance.CheckFields(spawn) && !CheckSpawn(spawn) && CheckObstacles(spawn)))
         {
             SpawnBox(spawn, newBox);
         }
@@ -144,5 +145,15 @@ public class BoxManagement : NetworkBehaviour {
         var box = Instantiate(newBox, pos, Quaternion.identity);
         GManager.Instance.AddField(box);
         NetworkServer.Spawn(box);
+    }
+
+    private bool CheckObstacles(Vector2 pos)
+    {
+        foreach (Obstacle obs in obstecles)
+        {
+            if (obs.ObstaclePos == pos) return false;
+        }
+
+        return true;        
     }
 }

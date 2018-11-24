@@ -112,7 +112,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 e90359c664c461fbfd951b605323ec60 Assembly-CSharp.dll:.PlayerSettings
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-636f888cead02711b2f494619b414559 Assembly-CSharp.dll:.BoxManagement
+a44c722d14aca45dcc6da4b43b1324e2 Assembly-CSharp.dll:.BoxManagement
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 54025dfb2be1ffdf7068c5730d928483 Assembly-CSharp.dll:.BoxBehave
@@ -163,3 +163,4 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 90b37c8234e30ab3d20968d338dd9671 Assembly-CSharp.dll:.Explosions
 3078789d03b370d25a4f5fc2b32d8ffd Assembly-CSharp.dll:.RandomBoxScript
 62773f4850a2944679484c7db8142532 Assembly-CSharp.dll:.BombBehave
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Obstacle
