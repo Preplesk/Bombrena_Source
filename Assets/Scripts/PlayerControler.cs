@@ -254,14 +254,15 @@ public class PlayerControler : NetworkBehaviour {
     [Command]
     public void CmdAddBomb(Vector2 _plant, GameObject _player)
     {
-        bool isFree = GManager.Instance.CheckFields(_plant);
+        bool isFree = UnitManager.Instance.IsEmpty(_plant); //GManager.Instance.CheckFields(_plant);
 
         if (isFree)
         {
 
             var _bomb = Instantiate(bomb, _plant, Quaternion.identity);
             _bomb.GetComponent<BombBehave>().explosionPower = bombPower;
-            GManager.Instance.AddField(_bomb, _player);
+            UnitManager.Instance.ChangeUnitState(_plant, _bomb, UnitManager.UnitContent.bomb, _player);
+            //GManager.Instance.AddField(_bomb, _player);
             NetworkServer.Spawn(_bomb);
             AudioManager.Instance.RpcPlay("cackle");
             _player.GetComponent<PlayerControler>().bombLimit -= 1;

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class UnitBehave : NetworkBehaviour {
+public class UnitBehave : NetworkBehaviour {    
 
     private bool unitActive = false;    
-    private GameObject plant = null;
+    public GameObject plant = null;
+    public GameObject contentObject = null;
+    public UnitManager.UnitContent content = UnitManager.UnitContent.empty;
+    public GameObject player = null;
     public GameObject bomb;
  
     private void Update()
@@ -43,5 +46,16 @@ public class UnitBehave : NetworkBehaviour {
             plant = null;
         }
     }
-    
+
+    public void Empty()
+    {
+        if (player != null)
+        {
+            player.GetComponent<PlayerControler>().bombLimit += 1;
+        }
+        Destroy(contentObject);
+        contentObject = null;
+        content = UnitManager.UnitContent.empty;
+        player = null;    
+    }    
 }

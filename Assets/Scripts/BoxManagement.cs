@@ -126,7 +126,7 @@ public class BoxManagement : NetworkBehaviour {
         float x = Random.Range(width / -2, width / 2);
         spawn = new Vector2(x*6, y*6);
                 
-        if ((GManager.Instance.CheckFields(spawn) && !CheckSpawn(spawn) && CheckObstacles(spawn)))
+        if ((UnitManager.Instance.IsEmpty(spawn) && !CheckSpawn(spawn) && CheckObstacles(spawn)))
         {
             SpawnBox(spawn, newBox);
         }
@@ -135,7 +135,8 @@ public class BoxManagement : NetworkBehaviour {
     public void SpawnBox(Vector2 pos)
     {
         var box = Instantiate(Box, pos, Quaternion.identity);
-        GManager.Instance.AddField(box);
+        UnitManager.Instance.ChangeUnitState(pos, box, UnitManager.UnitContent.box, null);
+        //GManager.Instance.AddField(box);
         NetworkServer.Spawn(box);
     }
 
@@ -143,7 +144,8 @@ public class BoxManagement : NetworkBehaviour {
     {
         Debug.Log("Inside spawning fcion");
         var box = Instantiate(newBox, pos, Quaternion.identity);
-        GManager.Instance.AddField(box);
+        UnitManager.Instance.ChangeUnitState(pos, box, UnitManager.UnitContent.box, null);
+        //GManager.Instance.AddField(box);
         NetworkServer.Spawn(box);
     }
 

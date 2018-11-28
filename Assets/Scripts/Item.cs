@@ -42,12 +42,14 @@ public class Item : NetworkBehaviour {
             if (collision.tag == "Player" && speed)
             {
                 collision.GetComponent<PlayerControler>().speed += speedIncrease;
-                GManager.Instance.RemoveObject(gameObject);
+                UnitManager.Instance.ResetUnit(gameObject.transform.position);
+                //GManager.Instance.RemoveObject(gameObject);
             }
             else if (collision.tag == "Player" && bomb)
             {
                 collision.GetComponent<PlayerControler>().bombLimit += 1;
-                GManager.Instance.RemoveObject(gameObject);
+                UnitManager.Instance.ResetUnit(gameObject.transform.position);
+                //GManager.Instance.RemoveObject(gameObject);
             }
             else if (collision.tag == "Explosion" && canBeDestroyed)
             {
@@ -55,7 +57,8 @@ public class Item : NetworkBehaviour {
                 {
                     bombObject.GetComponent<BombBehave>().SpawnExplosions(10.0f, transform.position);
                 }
-                GManager.Instance.RemoveObject(gameObject);
+                //GManager.Instance.RemoveObject(gameObject);
+                UnitManager.Instance.ResetUnit(gameObject.transform.position);
             }
         }
     }

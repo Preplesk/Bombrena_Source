@@ -22,7 +22,8 @@ public class BoxBehave : NetworkBehaviour {
         {                  
             if (collision.tag == "Explosion")
             {
-                GManager.Instance.RemoveObject(gameObject);
+                UnitManager.Instance.ResetUnit(gameObject.transform.position);
+                //GManager.Instance.RemoveObject(gameObject);
                 int generated = Random.Range(0, 3);
 
                 switch (generated)
@@ -31,12 +32,14 @@ public class BoxBehave : NetworkBehaviour {
                         break;
                     case 1:
                         var speed = Instantiate(speedItem,transform.position,Quaternion.identity);
-                        GManager.Instance.AddField(speed);
+                        UnitManager.Instance.ChangeUnitState(gameObject.transform.position, speed, UnitManager.UnitContent.item, null);
+                        //GManager.Instance.AddField(speed);
                         NetworkServer.Spawn(speed);
                         break;
                     case 2:
                         var bomb = Instantiate(bombItem,transform.position,Quaternion.identity);
-                        GManager.Instance.AddField(bomb);
+                        UnitManager.Instance.ChangeUnitState(gameObject.transform.position, bomb, UnitManager.UnitContent.item, null);
+                        //GManager.Instance.AddField(bomb);
                         NetworkServer.Spawn(bomb);
                         break;
 

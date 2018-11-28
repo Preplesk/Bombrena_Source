@@ -19,10 +19,11 @@ public class RandomBoxScript : NetworkBehaviour
     {   if (isServer)
         {
             if (timer < Time.time)
-            {
-                BoxManagement.Instance.SpawnBox(transform.position);
-                GManager.Instance.RemoveObject(gameObject);
+            {                
+                UnitManager.Instance.ResetUnit(gameObject.transform.position);
+                //GManager.Instance.RemoveObject(gameObject);
                 Destroy(gameObject);
+                BoxManagement.Instance.SpawnBox(gameObject.transform.position);
             }
         }
     }

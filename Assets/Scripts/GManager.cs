@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
- public class Field
+ /*public class Field
 {
     private Vector2 position;    
     private GameObject contentObject = null;
@@ -43,7 +43,7 @@ using UnityEngine.Networking;
     {
         player.GetComponent<PlayerControler>().bombLimit += i;
     }
-}
+}*/
 
 
 /*-----------------------------------------------------------------*/
@@ -59,7 +59,7 @@ public class GManager : NetworkBehaviour {
 
     public static GManager Instance { get; private set; }
 
-    public List<Field> fields = new List<Field>();
+   // public List<Field> fields = new List<Field>();
     public List<GameObject> players = new List<GameObject>();
     public GameStatus gameStatus = GameStatus.notStart;
     public GameObject WaitForOthers;
@@ -82,6 +82,8 @@ public class GManager : NetworkBehaviour {
         {
             Destroy(gameObject);
         }
+
+        
     }
 
     private void Start()
@@ -162,17 +164,17 @@ public class GManager : NetworkBehaviour {
         }
     }
 
-    public void AddField(GameObject _newField) 
+   /* public void AddField(GameObject _newField) 
     {
         fields.Add(new Field(_newField));
-    }
+    }*/
 
-    public void AddField(GameObject _newFieldObject, GameObject _player)
+    /*public void AddField(GameObject _newFieldObject, GameObject _player)
     {
         fields.Add(new Field(_newFieldObject, _player));
-    }
+    }*/
 
-    public bool CheckFields(Vector2 checkThis)
+    /*public bool CheckFields(Vector2 checkThis)
     {
         foreach (Field field in fields)
         {
@@ -182,7 +184,7 @@ public class GManager : NetworkBehaviour {
             } 
         }
         return true;
-    }
+    }*/
 
     public void ChangeGameStatus( GManager.GameStatus newStatus )
     {
@@ -194,7 +196,7 @@ public class GManager : NetworkBehaviour {
         return gameStatus;
     }
 
-    public void RemoveObject( GameObject toRemove )
+    /*public void RemoveObject( GameObject toRemove )
     {
         foreach (Field field in fields)
         {
@@ -210,24 +212,23 @@ public class GManager : NetworkBehaviour {
                 return;
             }
         }
-    }
+    }*/
     
-    public void RemoveAllObjects()
+   /* public void RemoveAllObjects()
     {
         foreach (Field field in fields)
         {            
             Destroy(field.GetContent());
         }
         fields = new List<Field>();
-    }
+    }*/
 
     [Command]
     private void CmdResetGame()
     {
-        Debug.Log("Enter reseting");
-        RemoveAllObjects();
+        UnitManager.Instance.ResetUnits();
+        //RemoveAllObjects();
         BoxManagement.Instance.SpawnBoxes();
-        Debug.Log("Box reseted");
         for (int i = 0; i < players.Count; i++)
         {
             var controller = players[i].GetComponent<PlayerControler>();

@@ -38,8 +38,9 @@ public class BombBehave : NetworkBehaviour
                 
             }
             if (explosion && explosionTime < Time.time)
-            {                
-                GManager.Instance.RemoveObject(gameObject);
+            {
+                UnitManager.Instance.ResetUnit(gameObject.transform.position);
+                //GManager.Instance.RemoveObject(gameObject);
             }
         }
     }

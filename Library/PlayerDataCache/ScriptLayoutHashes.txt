@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/Preplesk/Desktop/GameTest/GameTest.exe
+D:/PrepleskBook/Desktop/BombTestGame/BombTestGame.exe
 SceneListBegin?
 Assets/Scenes/OnlineScene.unity
 SceneListEnd?
@@ -121,9 +121,10 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Obstacle
 d9a042267d0c0100cc6e04dfccd4a7fe Assembly-CSharp.dll:.PlayerDeath
 312ce79b8d947f454f2337f60087461f Assembly-CSharp.dll:.ButtonColorChange
-8080da1591b4a911acdf0c358d4ce2ab Assembly-CSharp.dll:.UnitBehave
+89533053edf9fbb70d4d642a55f09a72 Assembly-CSharp.dll:.UnitBehave
 b923eb95ba402d65b929052b6fe08fea Assembly-CSharp.dll:.AudioManager
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.PlantTrigger
 32e8fe00b63ed946490b898f6024a2f2 Facebook.Unity.Settings.dll:Facebook.Unity.Settings.FacebookSettings
@@ -150,6 +151,7 @@ f02726adeff0a3ec5905565234b372da UnityEngine.TestRunner.dll:UnityEngine.TestTool
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
+60eae906d144941307e649294fa5365d Assembly-CSharp.dll:.UnitManager
 9e0ef5bf862444b5dc48b5a99554ce7c UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 67a5f2c97205d2e41a8ed7c7ce898f6e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
@@ -163,4 +165,3 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 90b37c8234e30ab3d20968d338dd9671 Assembly-CSharp.dll:.Explosions
 3078789d03b370d25a4f5fc2b32d8ffd Assembly-CSharp.dll:.RandomBoxScript
 62773f4850a2944679484c7db8142532 Assembly-CSharp.dll:.BombBehave
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Obstacle
