@@ -8,6 +8,7 @@ public class Item : NetworkBehaviour {
     public bool speed;
     public float speedIncrease;
     public bool bomb;
+    public bool bombPower;
     public GameObject bombObject;
     public BombBehave bombBehave;
     public bool canBeDestroyed ;
@@ -43,13 +44,16 @@ public class Item : NetworkBehaviour {
             {
                 collision.GetComponent<PlayerControler>().speed += speedIncrease;
                 UnitManager.Instance.ResetUnit(gameObject.transform.position);
-                //GManager.Instance.RemoveObject(gameObject);
             }
             else if (collision.tag == "Player" && bomb)
             {
                 collision.GetComponent<PlayerControler>().bombLimit += 1;
                 UnitManager.Instance.ResetUnit(gameObject.transform.position);
-                //GManager.Instance.RemoveObject(gameObject);
+            }
+            else if (collision.tag == "Player" && bombPower)
+            {
+                collision.GetComponent<PlayerControler>().bombPower += 1;
+                UnitManager.Instance.ResetUnit(gameObject.transform.position);
             }
             else if (collision.tag == "Explosion" && canBeDestroyed)
             {
@@ -57,7 +61,6 @@ public class Item : NetworkBehaviour {
                 {
                     bombObject.GetComponent<BombBehave>().SpawnExplosions(10.0f, transform.position);
                 }
-                //GManager.Instance.RemoveObject(gameObject);
                 UnitManager.Instance.ResetUnit(gameObject.transform.position);
             }
         }

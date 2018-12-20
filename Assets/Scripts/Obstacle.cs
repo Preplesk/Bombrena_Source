@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//[System.Serializable]
+[System.Serializable]
 public class Obstacle: MonoBehaviour
 {        
     public Vector2 ObstaclePos { get; private set; }

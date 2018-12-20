@@ -22,40 +22,35 @@ public class PlayerControler : NetworkBehaviour {
     bool isColliding;
 
     // Lives     
-    public float livesPositionX;
-    public float livesPositionY;
     [SyncVar]
-    public int playerLives;
-    public GameObject LiveObject;
-    public List<GameObject> lives = new List<GameObject>();
+    public int playerLives;    
 
     // Player bomb management 
     public GameObject bomb;
     [SyncVar]
     public bool plant;
-    public float explosionTimer = 3;
-    public float explosionDuration = 1; 
     
 
     //Player properties
     private Vector2 defaultPosition;
     public int Id;
-    public float defaultSpeed = 1000;
+    public float defaultSpeed ;
     [HideInInspector]
     public float speed;
-    public int defaultBombLimit = 1;
+    public int defaultBombLimit;
     [HideInInspector]
     [SyncVar]
     public int bombLimit;
+    [HideInInspector]
     [SyncVar]
-    public float bombPower = 1;
-    public float defaultBombPower = 1; // and this
+    public float bombPower;
+    public float defaultBombPower; // and this
     [HideInInspector]
     [SyncVar]
     public bool canKick = false;
 
-    //Player settings 
-    [SyncVar] // Is it necessary ?
+    // Player settings 
+    [SyncVar] 
     public GameObject Settings;
     [SyncVar]
     public string playerName;
@@ -72,7 +67,7 @@ public class PlayerControler : NetworkBehaviour {
         GManager.Instance.AddPlayer(gameObject);
         playerSprite = gameObject.GetComponent<SpriteRenderer>();
         speed = defaultSpeed;
-        //bombPower = defaultBombPower;
+        bombPower = defaultBombPower;
         bombLimit = defaultBombLimit;
         playerLives = GManager.Instance.playersLives;
         isColliding = false;
@@ -96,7 +91,6 @@ public class PlayerControler : NetworkBehaviour {
             if (Input.GetButtonDown("PlaceBomb") && bombLimit > 0)
             {
                 plant = true;
-                Debug.Log("space pressed");
             }
             else plant = false;
         }
@@ -139,13 +133,11 @@ public class PlayerControler : NetworkBehaviour {
                     {
                         CmdTurn();
                         isRight = true;
-                        Debug.Log("SWAP true");
                     }
                     else if (horizontal < 0 && isRight)
                     {
                         CmdTurn();
                         isRight = false;
-                        Debug.Log("SWAP false");
                     }
                 }
             }
@@ -160,7 +152,7 @@ public class PlayerControler : NetworkBehaviour {
 
             Vector2 moveBy = new Vector2(horizontal, vertical);
 
-
+            // Player movement assistant 
             if (isColliding && horizontal != 0)
             {
                 if (Collider.position.y + tolerance < transform.position.y
@@ -188,8 +180,6 @@ public class PlayerControler : NetworkBehaviour {
                 }
             }
             Player.velocity = moveBy;
-
-
         }
     }
 
@@ -254,7 +244,7 @@ public class PlayerControler : NetworkBehaviour {
     [Command]
     public void CmdAddBomb(Vector2 _plant, GameObject _player)
     {
-        bool isFree = UnitManager.Instance.IsEmpty(_plant); //GManager.Instance.CheckFields(_plant);
+        bool isFree = UnitManager.Instance.IsEmpty(_plant); 
 
         if (isFree)
         {
@@ -262,7 +252,6 @@ public class PlayerControler : NetworkBehaviour {
             var _bomb = Instantiate(bomb, _plant, Quaternion.identity);
             _bomb.GetComponent<BombBehave>().explosionPower = bombPower;
             UnitManager.Instance.ChangeUnitState(_plant, _bomb, UnitManager.UnitContent.bomb, _player);
-            //GManager.Instance.AddField(_bomb, _player);
             NetworkServer.Spawn(_bomb);
             AudioManager.Instance.RpcPlay("cackle");
             _player.GetComponent<PlayerControler>().bombLimit -= 1;

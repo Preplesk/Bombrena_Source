@@ -5,16 +5,17 @@ using UnityEngine.Networking;
 
 
 public class BoxBehave : NetworkBehaviour {
-    enum Items
-    {
-        empty,
-        speed,
-        boomb     
-    }
-
+    
     public GameObject bombItem;
     public GameObject speedItem;
-    
+    public GameObject powerItem;
+
+    public void SpawnItem(GameObject item)
+    {
+        var newItem = Instantiate(item, transform.position, Quaternion.identity);
+        UnitManager.Instance.ChangeUnitState(gameObject.transform.position, newItem, UnitManager.UnitContent.item, null);
+        NetworkServer.Spawn(newItem);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,29 +24,25 @@ public class BoxBehave : NetworkBehaviour {
             if (collision.tag == "Explosion")
             {
                 UnitManager.Instance.ResetUnit(gameObject.transform.position);
-                //GManager.Instance.RemoveObject(gameObject);
-                int generated = Random.Range(0, 3);
+                int generated = Random.Range(0, 5);
 
                 switch (generated)
                 {
                     case 0:
                         break;
                     case 1:
-                        var speed = Instantiate(speedItem,transform.position,Quaternion.identity);
-                        UnitManager.Instance.ChangeUnitState(gameObject.transform.position, speed, UnitManager.UnitContent.item, null);
-                        //GManager.Instance.AddField(speed);
-                        NetworkServer.Spawn(speed);
+                        SpawnItem(speedItem);
                         break;
                     case 2:
-                        var bomb = Instantiate(bombItem,transform.position,Quaternion.identity);
-                        UnitManager.Instance.ChangeUnitState(gameObject.transform.position, bomb, UnitManager.UnitContent.item, null);
-                        //GManager.Instance.AddField(bomb);
-                        NetworkServer.Spawn(bomb);
+                        SpawnItem(bombItem);
+                        break;
+                    case 3:
+                        SpawnItem(powerItem);
                         break;
 
                     default: break;
                 }
-            }
+            }            
         }           
     }    
 }

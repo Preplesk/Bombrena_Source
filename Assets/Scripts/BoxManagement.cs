@@ -11,17 +11,12 @@ public class BoxManagement : NetworkBehaviour {
     public int height;
     public bool maxPlayers = false;
     public float boxSpawnTimer;
-    [SerializeField]
     private float timer;
     public GameObject Box;
     public GameObject newBox;
-    public Transform spawn1 ;
-    public Transform spawn2 ;
-    public Transform spawn3 ;
-    public Transform spawn4 ;
     public int spawnRange;
     public Obstacle[] obstecles;
-    List<Transform> spawns = new List<Transform>();
+    public Spawn[] spawns;
 
     private void Awake()
     {
@@ -37,21 +32,10 @@ public class BoxManagement : NetworkBehaviour {
     }
 
     public override void OnStartServer()
-    {        
-        if (maxPlayers)
-        {
-            spawns.Add(spawn1);
-            spawns.Add(spawn2);
-            spawns.Add(spawn3);
-            spawns.Add(spawn4);
-        }
-        else
-        {
-            spawns.Add(spawn1);
-            spawns.Add(spawn2);
-        }
+    {   
         SpawnBoxes();        
     }
+
     private void Start()
     {
         if (isServer)
@@ -72,7 +56,6 @@ public class BoxManagement : NetworkBehaviour {
             {
                 if (timer < Time.time)
                 {
-                    Debug.Log("Call for spawn new box");
                     SpawnRandomBox();
                     timer = Time.time + boxSpawnTimer;
                 }
@@ -94,12 +77,15 @@ public class BoxManagement : NetworkBehaviour {
 
     private bool CheckSpawn(Vector2 position)
     {
-        foreach (Transform pos in spawns)
+        for (int i = 0; i < GManager.Instance.maxPlayers; i++)
         {
-            if (pos.position.x - 6 <= position.x && pos.position.x + 6 >= position.x 
-                && pos.position.y - 6 <= position.y && pos.position.y + 6 >= position.y   ) return true;
+            if (spawns[i].spawnPosition.x - 6 <= position.x &&
+                spawns[i].spawnPosition.x + 6 >= position.x &&
+                spawns[i].spawnPosition.y - 6 <= position.y &&
+                spawns[i].spawnPosition.y + 6 >= position.y)
+                return true;
         }
-        return false;       
+        return false;
     }
 
     public void SpawnBoxes()
@@ -108,11 +94,11 @@ public class BoxManagement : NetworkBehaviour {
         {
             for (int x = width / 2; x >= width / -2; x--)
             {
-                Vector2 tempPosition = new Vector2(x * 6, y * 6);
+                Vector2 spawn = new Vector2(x * 6, y * 6);
                
-                if (SpawnRate() && !CheckSpawn(tempPosition))
+                if (SpawnRate() && !CheckSpawn(spawn) && CheckObstacles(spawn))
                 {
-                    SpawnBox(tempPosition);
+                    SpawnBox(spawn, Box);
                 }
             }
         }
@@ -120,11 +106,9 @@ public class BoxManagement : NetworkBehaviour {
 
     public void SpawnRandomBox()
     {
-        Vector2 spawn;
+        Vector2 spawn;        
         
-        float y = Random.Range(height / -2, height / 2);
-        float x = Random.Range(width / -2, width / 2);
-        spawn = new Vector2(x*6, y*6);
+        spawn = UnitManager.Instance.GetRandomUnitPos();
                 
         if ((UnitManager.Instance.IsEmpty(spawn) && !CheckSpawn(spawn) && CheckObstacles(spawn)))
         {
@@ -132,20 +116,11 @@ public class BoxManagement : NetworkBehaviour {
         }
     }
 
-    public void SpawnBox(Vector2 pos)
+    public void SpawnBox(Vector2 pos, GameObject _box)
     {
-        var box = Instantiate(Box, pos, Quaternion.identity);
+        if (_box == null) _box = Box;
+        var box = Instantiate(_box, pos, Quaternion.identity);
         UnitManager.Instance.ChangeUnitState(pos, box, UnitManager.UnitContent.box, null);
-        //GManager.Instance.AddField(box);
-        NetworkServer.Spawn(box);
-    }
-
-    public void SpawnBox(Vector2 pos, GameObject newBox)
-    {
-        Debug.Log("Inside spawning fcion");
-        var box = Instantiate(newBox, pos, Quaternion.identity);
-        UnitManager.Instance.ChangeUnitState(pos, box, UnitManager.UnitContent.box, null);
-        //GManager.Instance.AddField(box);
         NetworkServer.Spawn(box);
     }
 

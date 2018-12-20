@@ -9,7 +9,7 @@ public class BombBehave : NetworkBehaviour
     public bool explosion = false;
     public GameObject Bomb;
     public float explosionTimer = 3;
-    public float explosionDuration = 1;
+    public float explosionDuration = 0.5f;
     public float explosionPower; 
     private float explosionTime;
     public GameObject ExplosionRight;
@@ -40,7 +40,6 @@ public class BombBehave : NetworkBehaviour
             if (explosion && explosionTime < Time.time)
             {
                 UnitManager.Instance.ResetUnit(gameObject.transform.position);
-                //GManager.Instance.RemoveObject(gameObject);
             }
         }
     }

@@ -17,10 +17,8 @@ public class UnitBehave : NetworkBehaviour {
         if (unitActive)
         {
             GameObject player = plant.transform.root.gameObject;
-            Debug.Log("Checking");
             if (player.GetComponent<PlayerControler>().plant)
-            {
-                Debug.Log("Planting");                
+            {              
                 player.GetComponent<PlayerControler>().CmdAddBomb(transform.position, player);
             }
         }   
@@ -31,7 +29,6 @@ public class UnitBehave : NetworkBehaviour {
 
         if (collision.name == "PlantPlace")
         {
-            Debug.Log("Unit set active on :" + transform.position);
             unitActive = true;
             plant = collision.gameObject;
         }
@@ -41,7 +38,6 @@ public class UnitBehave : NetworkBehaviour {
     {
         if (collision.name == "PlantPlace")
         {
-            Debug.Log("Unit deactivate  :" + transform.position);
             unitActive = false;
             plant = null;
         }
